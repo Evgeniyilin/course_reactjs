@@ -1,5 +1,5 @@
 import React from "react"
-import ReactDOM from "react-dom"
+import * as ReactDOMClient from 'react-dom/client'
 
 // ReactDOM.render(<div><h1>Привет!</h1><h3>Hello</h3></div>, document.getElementById("dapp"))
 
@@ -15,6 +15,7 @@ const elements = (<div className="Name">
     <p>{helpText === "Help text" ? "Yes" : "No"}</p>
     </div>)
 
-const app = document.getElementById("dapp")
+const todiv = document.getElementById("dapp")
+const app = ReactDOMClient.createRoot(todiv)
 
-ReactDOM.render(elements, app)
+app.render(elements)
